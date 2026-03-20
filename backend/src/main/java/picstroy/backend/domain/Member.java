@@ -59,7 +59,7 @@ public class Member {
         this.emailVerified = false;
     }
 
-    public void changeStatus(MemberStatus statis) {
+    public void changeStatus(MemberStatus status) {
         this.status = status;
     }
 }

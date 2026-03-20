@@ -22,7 +22,7 @@ public class MemberService {
             String password,
             String passwordConfirm,
             String phone) {
-        if(memberRepository.exitsByEmail(email)) {
+        if(memberRepository.existsByEmail(email)) {
             throw new RuntimeException("이미 사용 중인 이메일입니다.");
         }
 
