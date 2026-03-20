@@ -1,12 +1,12 @@
 package picstroy.backend.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import picstroy.backend.service.MemberService;
+import picstroy.backend.web.dto.MemberResponse;
 import picstroy.backend.web.dto.SignupRequest;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -16,6 +16,19 @@ public class MemberController {
 
     @PostMapping
     public Long signup(@RequestBody SignupRequest request) {
-        return memberService.signup(request.name(), request.email());
+        return memberService.signup(
+                request.name(),
+                request.email(),
+                request.password(),
+                request.passwordConfirm(),
+                request.phone());
+    }
+
+    @GetMapping
+    public List<MemberResponse> list() {
+        return memberService.findAll()
+                .stream()
+                .map(MemberResponse::from)
+                .toList();
     }
 }
