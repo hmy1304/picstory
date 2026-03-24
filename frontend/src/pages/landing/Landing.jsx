@@ -10,6 +10,15 @@ const bgImages = [
 const Landing = () => {
   return (
     <section className='landing'>
+      <div className="landing-bg">
+        <div className="bg-track">
+          {[...bgImages, ...bgImages].map((src, i)=>(
+            <div key={i} className='bg-item'>
+              <img src={src} alt="bg" />
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="inner">
         <div className="t-wrap">
           <img src="/images/landing-img.png" alt="img" />
@@ -20,7 +29,7 @@ const Landing = () => {
             사진 현장. 한줄 메모. 검색. 공유까지 - PicStory
           </p>
         </div>
-        <NavLink>
+        <NavLink to="/login">
           <Button text='시작하기' className='intro' icons={true}/>
         </NavLink>
       </div>
