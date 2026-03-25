@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Button from "../../components/ui/Button"
-import "./Login.scss"
+import "./Auth.scss"
 import Input from "@/components/ui/Input"
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -19,9 +19,9 @@ const Login = () => {
   }
 
   return (
-    <section className='login'>
+    <section className='auth'>
       <div className="inner">
-        <div className="login-box">
+        <div className="auth-box">
           <nav>
             <h2>로그인</h2>
             <Button 
@@ -31,7 +31,7 @@ const Login = () => {
             onClick={handleBack}/>
           </nav>
 
-          <form className='login-home'>
+          <form className='auth-form'>
             <div className="form-group">
               <Input 
               type="email"
@@ -43,7 +43,7 @@ const Login = () => {
               />
 
             </div>
-            <div className="login-btn-wrap">
+            <div className="auth-btn-wrap">
               <Button 
               text="로그인" 
               type="submit" 
@@ -51,7 +51,7 @@ const Login = () => {
             </div>
           </form>
 
-          <div className="signup-now">
+          <div className="auth-now">
             <span>계정이 없으신가요?</span>
             <Link to="/signup">
               <Button text="회원가입하기" icons/>
