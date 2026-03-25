@@ -5,6 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import picstroy.backend.domain.Member;
+import picstroy.backend.domain.MemberStatus;
 import picstroy.backend.repository.MemberRepository;
 
 import java.util.List;
@@ -44,5 +45,21 @@ public class MemberService {
     @Transactional(readOnly = true)
     public List<Member> findAll() {
         return memberRepository.findAll();
+    }
+
+    @Transactional(readOnly = true)
+    public Member findById(Long id) {
+        return memberRepository.findById(id)
+                .orElseThrow(()->new RuntimeException("회원가이 존재하지 않습니다."));
+    }
+
+    public void changeStatus(Long id, MemberStatus status) {
+        Member member = findById(id);
+        member.changeStatus(status);
+    }
+
+    public void withdraw(Long id) {
+        Member member = findById(id);
+        member.changeStatus(MemberStatus.DELETED);
     }
 }
