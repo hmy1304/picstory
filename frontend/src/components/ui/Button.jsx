@@ -9,7 +9,7 @@ const Button = ({text,
 }) => {
 const backIconSrc = 
   backico=='wh'?"/images/arrow-back-white.svg" : 
-  backico == "bh"?"/images/arrow-back.svg" : null
+    backico == "bh"?"/images/arrow-back.svg" : null
 
   return (
     <button className={`btn ${className}`} onClick={onClick}>
