@@ -1,4 +1,4 @@
-const BASE_URL =import.meta.env.VITE_API_URL
+const BASE_URL = import.meta.env.VITE_API_URL
 
 
 export const signup =async(signupData)=>{
@@ -59,7 +59,7 @@ export const getMe =async()=>{
     return data
 }
 export const logout =async()=>{
-            const response = await fetch(`${BASE_URL}/auth/logout`,{
+        const response = await fetch(`${BASE_URL}/auth/logout`,{
         method:'POST',
         credentials:'include'
 

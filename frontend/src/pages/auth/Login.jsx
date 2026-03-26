@@ -63,7 +63,7 @@ const Login = () => {
             <h2>로그인</h2>
             <Button 
             text="뒤로가기"
-            icons
+            backico='wh'
             className="back" 
             onClick={handleBack}/>
           </nav>
@@ -93,7 +93,7 @@ const Login = () => {
               className="primary"/>
             </div>
           </form>
-
+          {error && <p className='error-text'> {error}</p>}
           <div className="auth-now">
             <span>계정이 없으신가요?</span>
             <Link to="/signup">
