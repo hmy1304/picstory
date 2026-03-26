@@ -59,7 +59,7 @@ export const getMe =async()=>{
     return data
 }
 export const logout =async()=>{
-        const response = await fetch(`${BASE_URL}/auth/logout`,{
+    const response = await fetch(`${BASE_URL}/auth/logout`,{
         method:'POST',
         credentials:'include'
 
