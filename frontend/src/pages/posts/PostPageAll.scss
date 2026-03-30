@@ -1,0 +1,39 @@
+@use "@/styles/variables" as *;
+.post-section{
+    .inner {
+        max-width: $container-md;
+        .post-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: $space-lg;
+            .post-title {
+                font-size: $text-xl;
+                font-weight: $fw-bold;
+
+            }
+
+            .btn.primary {
+                width: auto;
+            }
+        }
+    }
+}
+.input-post {
+    border-bottom: 1px solid $purple;
+    box-shadow: none;
+    .input-field {
+        caret-color: $purple;
+        font-size: $text-xl;
+        color: $gray-600;
+        
+        &::placeholder{
+            color:$gray-200;
+            font-size: $text-xl;
+        }
+        &:focus{
+            
+            box-shadow: none;
+        }
+    }
+}
