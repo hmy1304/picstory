@@ -26,11 +26,11 @@ public class PostService {
     public List<PostResponse> findMyPosts(HttpSession session) {
         Long memberId = (Long) session.getAttribute(LOGIN_MEMBER_ID);
 
-        if(memberId == null) {
+        if (memberId == null) {
             throw new IllegalArgumentException("로그인 후 이용해 주세요");
         }
 
-        return postRepository.findAll()
+        return postRepository.findByMember_IdOrderByCreatedAtDesc(memberId)
                 .stream()
                 .map(PostResponse::from)
                 .toList();
