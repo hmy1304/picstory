@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
         element:<PostAll/>
       },
       {
-        path:'posts/create',
+        path:'posts/new',
         element:<PostCreate/>
       },
       {
