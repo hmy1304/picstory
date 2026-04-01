@@ -18,22 +18,41 @@
             }
         }
     }
-}
-.input-post {
-    border-bottom: 1px solid $purple;
-    box-shadow: none;
-    .input-field {
-        caret-color: $purple;
-        font-size: $text-xl;
-        color: $gray-600;
-        
-        &::placeholder{
-            color:$gray-200;
-            font-size: $text-xl;
+
+    &.post-detail {
+        .inner {
+            .post-card {
+                margin-top: $space-xl;
+                display: flex;
+                flex-direction: column;
+                gap: $space-lg;
+                border: 1px solid $gray-200;
+                padding: $space-lg;
+                border-radius: $r-md;
+                color: $bg;
+            }
+            .post-card-title {
+                font-size: $text-xl;
+                margin: $space-md;
+            }
+            .post-card-content {
+                min-height: 200px;
+                background-color: $gray-50;
+                padding: $space-md;
+                border-radius: $r-sm;
+            }
+            .img-wrap {
+                margin: $space-md;
+            }
         }
-        &:focus{
-            
-            box-shadow: none;
+        .btn-wrap {
+            margin-top: $space-md;
+            display: flex;
+            justify-content: space-between;
+            gap: $space-md;
+            .btn {
+                flex: 1;
+            }
         }
     }
 }

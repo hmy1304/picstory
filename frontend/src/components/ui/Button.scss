@@ -54,10 +54,17 @@
         box-shadow: $shadow-sm;
       }
     }
+    &.delete,
     &.cancel {
         background: $error;
     }
     &.save {
         background: $success;
+    }
+    &.back.bl {
+        color:$gray-900
+    }
+    &.edit {
+        background-color: $warning;
     }
 }
